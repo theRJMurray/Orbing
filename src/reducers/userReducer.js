@@ -1,7 +1,8 @@
 import {SET_PHASE} from '../actions/types';
 
 const initialState = {
-    phase: 'Orbing'
+    level: 1,
+    experience: 0
 }
 
 export default function userReducer(state = initialState, action, payload){
