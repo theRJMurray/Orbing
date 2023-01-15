@@ -18,6 +18,7 @@ const MenuItem = ({url, children}) => {
 
 const Navigation = () => {
     return <div style={{height: '100%', width: 300, background: '#172A3A'}}>
+        <MenuItem url={'/'}>Home</MenuItem>
         <MenuItem url={'/explore'}>Explore</MenuItem>
         <MenuItem url={'/bank'}>Bank</MenuItem>
         <MenuItem url={'/orbing'}>Orbing</MenuItem>
