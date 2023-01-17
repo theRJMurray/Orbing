@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import Register from './Components/Register.js'
 import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import history from './history';
+import PrivateRoute from './Components/PrivateRoute.js'
 
 const App = () => {
 	const auth = useSelector(state => state.auth)
@@ -28,9 +29,9 @@ const App = () => {
 				<TopBar />
 					<Routes>
 						<Route exact path="/" element={<Home />} />
-						<Route exact path="/explore" element={<Explore />} />
-						<Route exact path="/bank" element={<Bank />} />
-						<Route exact path="/orbing" element={<Orbing />} />
+						<Route exact path="/explore" element={<PrivateRoute><Explore /></PrivateRoute>} />
+						<Route exact path="/bank" element={<PrivateRoute><Bank /></PrivateRoute>} />
+						<Route exact path="/orbing" element={<PrivateRoute><Orbing /></PrivateRoute>} />
 						<Route exact path="/register" element={<Register />} />
 						<Route exact path="/login" element={<Login />} />
 					</Routes>
