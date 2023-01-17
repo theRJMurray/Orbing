@@ -1,10 +1,9 @@
-1 NPM Package
+There is only 1 NPM package `npm install` from the root
 
-2 Terminals
+You will need 2 terminals.
 
 
 In the first terminal:
-`npm i`
 `npm start`
 
 
