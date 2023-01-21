@@ -18,16 +18,22 @@ const MenuItem = ({url, children}) => {
 }
 
 const Navigation = () => {
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    // const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    const user = useSelector(state => state.user)
     
     return <div style={{height: '100%', width: 300, background: '#172A3A'}}>
         <MenuItem url={'/'}>Home</MenuItem>
-        {isAuthenticated && 
+        <MenuItem url={'/explore'}>NewExplore</MenuItem>
+        {user.location.activities.map((activity, index) => {
+            return <MenuItem url={`/${activity.name.toLowerCase()}`}>{activity.name}</MenuItem>
+        })}
+        {/* <MenuItem url={'/bank'}>Bank</MenuItem>
+        <MenuItem url={'/orbing'}>Orbing</MenuItem> */}
+        {/* {isAuthenticated && 
         <div>
-            <MenuItem url={'/explore'}>Explore</MenuItem>
             <MenuItem url={'/bank'}>Bank</MenuItem>
             <MenuItem url={'/orbing'}>Orbing</MenuItem>
-        </div>}
+        </div>} */}
     </div>
 }
 

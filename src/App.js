@@ -1,7 +1,7 @@
 import Orbing from './Components/Orbing.js'
 import Navigation from './Components/Navigation.js'
 import Bank from './Components/Bank.js'
-import Explore from './Components/Explore.js'
+import NewExplore from './Components/NewExplore.js'
 import TopBar from './Components/TopBar.js'
 import {useEffect} from 'react'
 import Home from './Components/Home.js'
@@ -29,9 +29,11 @@ const App = () => {
 				<TopBar />
 					<Routes>
 						<Route exact path="/" element={<Home />} />
-						<Route exact path="/explore" element={<PrivateRoute><Explore /></PrivateRoute>} />
-						<Route exact path="/bank" element={<PrivateRoute><Bank /></PrivateRoute>} />
-						<Route exact path="/orbing" element={<PrivateRoute><Orbing /></PrivateRoute>} />
+						<Route exact path="/explore" element={<NewExplore />} />
+						{/* <Route exact path="/bank" element={<PrivateRoute><Bank /></PrivateRoute>} />
+						<Route exact path="/orbing" element={<PrivateRoute><Orbing /></PrivateRoute>} /> */}
+						<Route exact path="/bank" element={<Bank />} />
+						<Route exact path="/orbing" element={<Orbing />} />
 						<Route exact path="/register" element={<Register />} />
 						<Route exact path="/login" element={<Login />} />
 					</Routes>

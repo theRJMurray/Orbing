@@ -1,16 +1,18 @@
-import {SET_PHASE} from '../actions/types';
+import {SET_LOCATION} from '../actions/types';
+import Raeglin from '../imgs/raeglin.png'
 
 const initialState = {
     level: 1,
-    experience: 0
+    experience: 0,
+    location: {name: 'Raeglin', image: Raeglin}
 }
 
 export default function userReducer(state = initialState, action, payload){
     switch(action.type){
-        case SET_PHASE:
+        case SET_LOCATION:
             return {
                 ...state,
-                phase: action.payload
+                location: action.payload
             }
         default:
             return state;
